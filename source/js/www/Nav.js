@@ -74,6 +74,9 @@
             }
 
             _currentLink = _currentLink.toLowerCase();
+            
+            if (typeof localStorage !== 'undefined') 
+                    localStorage.setItem('s16_current_page', _currentLink);
         };
 
 
