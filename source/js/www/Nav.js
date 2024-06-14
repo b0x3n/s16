@@ -202,6 +202,12 @@
                     'color': '#000',
                     'cursor': 'default'
                 });
+            } else {
+                $(`#nav_link_${_links[index].toLowerCase()}`).css({
+                    'background-color': '#000',
+                    'color': 'rgba(24, 220, 120, 1)',
+                    'cursor': 'pointer'
+                });
             }
 
             $(`#nav_link_${_links[index].toLowerCase()}`).css({
