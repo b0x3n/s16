@@ -27,5 +27,5 @@
             color: $fg-default;
         }
 
-        .link a:hover { color: $fg-hover; text-decoration: underline; }
-        .link a:active { color: $fg-hover; }
+        .link:hover { color: $fg-hover; text-decoration: underline; }
+        .link:active { color: $fg-hover; }

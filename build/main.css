@@ -85,12 +85,12 @@ header, .header_title, .links {
   color: rgb(24, 220, 120);
 }
 
-.link a:hover {
+.link:hover {
   color: rgb(255, 255, 255);
   text-decoration: underline;
 }
 
-.link a:active {
+.link:active {
   color: rgb(255, 255, 255);
 }
 
