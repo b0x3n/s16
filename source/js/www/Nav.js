@@ -157,21 +157,21 @@
                 return;
             }
 
-            if (_links[index] === _currentLink)
+            if (_links[index].toLowerCase() === _currentLink)
             {
-                $(`#nav_link_${_links[index]}`).css({
+                $(`#nav_link_${_links[index].toLowerCase()}`).css({
                     'background-color': '#FFF',
                     'color': '#000',
                     'cursor': 'default'
                 });
             }
 
-            $(`#nav_link_${_links[index]}`).css({
+            $(`#nav_link_${_links[index].toLowerCase()}`).css({
                 'display': 'block',
                 'opacity': '0.01'
             });
 
-            $(`#nav_link_${_links[index]}`).stop().animate({
+            $(`#nav_link_${_links[index].toLowerCase()}`).stop().animate({
                 'opacity': '0.90'
             }, duration, "linear", function() {
                 __showNavLink((index + 1), duration);
@@ -184,10 +184,10 @@
             duration = 100
         ) =>
         {
-            $(`#nav_link_${_links[index]}`).stop().animate({
+            $(`#nav_link_${_links[index].toLowerCase()}`).stop().animate({
                 'opacity': '0.01'
             }, duration, "linear", function() {
-                $(`#nav_link_${_links[index]}`).css({
+                $(`#nav_link_${_links[index].toLowerCase()}`).css({
                     'display': 'none'
                 });
 
