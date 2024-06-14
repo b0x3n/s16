@@ -42,6 +42,11 @@
             __initMouseEvents();
             __loadPages();
 
+            $(`#page_${_currentLink}`).css({
+                'display': 'block',
+                'opacity': '0.99'
+            });
+
             console.log('Nav module initialised');
             console.log(`Showing page ${_currentLink}`);
         };
@@ -121,7 +126,7 @@
         let     __loadPages = () =>
         {
             _links.forEach(link => {
-                $(`#page_${link.toLowerCase()}`).load(`https://b0x3n.github.io/s16/public/pages/${link}.html`);
+                $(`#page_${link.toLowerCase()}`).load(`https://github.com/b0x3n/s16/public/pages/${link}.html`);
             });
         };
 
