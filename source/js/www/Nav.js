@@ -65,6 +65,15 @@
         };
 
 
+        let     __setCurrentPage = pageName =>
+        {
+            _currentLink = pageName;
+            
+            if (typeof localStorage !== 'undefined')
+                localStorage.setItem('s16_current_page', pageName);
+        };
+
+
         let     __initDefaultNav = () =>
         {
             let     __html = '';
@@ -134,7 +143,7 @@
                     'display': 'none'
                 });
                 
-                _currentLink = _page;
+                __setCurrentPage(_page);
 
                 $(`#page_${_currentLink}`).css({
                     'opacity': '0.99',
