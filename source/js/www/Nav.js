@@ -120,6 +120,27 @@
 
                 __hideNavLinks((_links.length - 1));
             });
+
+            $('.nav_link').on('click', () => {
+                let     _page = $(this).attr('id').substr(9);
+
+                if (_page === _currentLink)
+                    return;
+
+                $(`#page_${_currentLink}`).css({
+                    'opacity': '0.01',
+                    'display': 'none'
+                });
+                
+                _currentLink = _page;
+
+                $(`#page_${_currentLink}`).css({
+                    'opacity': '0.99',
+                    'display': 'block'
+                });
+
+                $('#nav').trigger('mouseout');
+            });
         };
 
 
