@@ -58,8 +58,10 @@
                 if (typeof localStorage.getItem('s16_current_page') !== 'null')
                     _currentLink = localStorage.getItem('s16_current_page');
                 else
-                    _currentLink = 'home';
+                    _currentLink = _links[0].toLowerCase();
             }
+            else
+                _currentLink = _links[0].toLowerCase();
 
             let _buildLink = _currentLink;
             let _linkInitial = _buildLink.substr(0, 1).toUpperCase();
