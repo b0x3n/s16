@@ -55,7 +55,7 @@
         let     __setCurrentLink = () =>
         {
             if (typeof localStorage !== 'undefined') {
-                if (typeof localStorage.getItem('s16_current_page') !== null)
+                if (localStorage.getItem('s16_current_page') !== null)
                     _currentLink = localStorage.getItem('s16_current_page');
                 else
                     _currentLink = _links[0].toLowerCase();
