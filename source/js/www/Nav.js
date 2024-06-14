@@ -65,7 +65,7 @@
             let     __html = '';
 
             _links.forEach(link => {
-                __html += `<div id="nav_link_${link}" class="link" style="margin: 0;">${link}</div>`;
+                __html += `<div id="nav_link_${link.toLowerCase()}" class="link" style="margin: 0;">${link}</div>`;
             });
 
             $('#nav_links').css({
