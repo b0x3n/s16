@@ -54,7 +54,11 @@
 
         let     __setCurrentLink = () =>
         {
-            _currentLink = localStorage.getItem('s16_current_page');
+            alert(`${_currentLink} (${localStorage.getItem('s16_current_page')})`);
+            let _buildLink = localStorage.getItem('s16_current_page');
+            let _linkInitial = _buildLink.substr(0, 1);
+
+            _currentLink = _linkInitial + _buildLink.substr(1);
 
             if (_links.indexOf(_currentLink) < 0) {
                 _currentLink = _links[0].toLowerCase();
@@ -68,7 +72,7 @@
         let     __setCurrentPage = pageName =>
         {
             _currentLink = pageName;
-            
+
             if (typeof localStorage !== 'undefined')
                 localStorage.setItem('s16_current_page', pageName);
         };
