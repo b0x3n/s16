@@ -73,7 +73,7 @@ header, .header_title, .links {
   float: right;
 }
 
-.link, .links {
+.link {
   position: relative;
   float: left;
   width: auto;
