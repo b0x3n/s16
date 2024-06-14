@@ -136,8 +136,6 @@
             $('.link').on('click', function() {
                 let     _page = $(this).attr('id').substr(9);
 
-                alert(`click on nav link ${_page}`);
-
                 if (_page === _currentLink)
                     return;
 
