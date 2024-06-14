@@ -54,7 +54,14 @@
 
         let     __setCurrentLink = () =>
         {
-            let _buildLink = localStorage.getItem('s16_current_page');
+            if (typeof localStorage !== 'undefined') {
+                if (typeof localStorage.getItem('s16_current_page') !== 'null')
+                    _currentLink = localStorage.getItem('s16_current_page');
+                else
+                    _currentLink = 'home';
+            }
+
+            let _buildLink = _currentLink;
             let _linkInitial = _buildLink.substr(0, 1).toUpperCase();
 
             _currentLink = _linkInitial + _buildLink.substr(1);
