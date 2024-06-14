@@ -1,0 +1,45 @@
+/**********************************************************
+ * s16/source/scss/style/_header.scss
+ */
+
+    header
+    {
+        position: relative;
+        float: left;
+
+        margin-top: .5vh;
+        margin-left: .5vw;
+
+        width: 99vw;
+        height: 8vh;
+
+        border: solid 1px $fg-default;
+        
+        font-family: $vt323;
+        font-size: 32px;
+
+        box-sizing: border-box;
+
+        z-index: 4;
+    }
+
+        .header_title
+        {
+            display: inline-block;
+
+            @extend header;
+
+            width: auto;
+            height: auto;
+
+            color: #FFF;
+
+            line-height: 18px;
+
+            padding: 0px 0px 1px 0px; 
+            margin: calc((8vh - 24px) / 2) 0px 0px calc((8vh - 24px) / 2);
+
+            border: none;
+
+            cursor: pointer;
+        }

@@ -1,0 +1,31 @@
+/**********************************************************
+ * s16/source/scss/style/_links.scss
+ */
+
+    .links
+    {
+        @extend .header_title;
+
+        float: right;
+    }
+
+        .link
+        {
+            position: relative;
+            float: left;
+
+            width: auto;
+            height: auto;
+
+            margin-left: calc((8vh - 24px) / 2);
+            margin-right: calc((8vh - 24px) / 2);
+
+            font-size: 22px;
+
+            text-decoration: none;
+
+            color: $fg-default;
+        }
+
+        .link:hover { color: $fg-hover; }
+        .link:active { color: $fg-hover; text-decoration: underline; }

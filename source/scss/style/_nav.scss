@@ -1,0 +1,81 @@
+/**********************************************************
+ * s16/source/scss/style/_nav.scss
+ */
+ 
+    nav
+    {
+        position: absolute;
+
+        top: 9vh;
+        left: .5vw;
+        width: 1.5vw;
+        height: 90vh;
+
+        border: solid 1px $fg-default;
+
+        background-color: rgba(0, 0, 0, 0.75);
+
+        z-index: 10;
+    }
+
+        .nav_expand
+        {
+            position: absolute;
+            
+            top: calc((90vh - 1vw) / 2);
+            right: -.12vw;
+            width: 1vw;
+            height: 1vw;
+
+            background-color: none;
+
+            border: solid .5vw rgba(0, 0, 0, 0);
+            border-left: solid .5vw rgba(255, 255, 255, 1);
+
+            cursor: pointer;
+        }
+
+        .nav_header
+        {
+            position: absolute;
+
+            top: 1vh;
+            left: 0;
+            width: 100%;
+            height: 20px;
+
+            font-size: 20px;
+            font-family: $vt323;
+
+            text-align: center;
+
+            display: none;
+            opacity: 0.01;
+            
+            color: #FFF;
+        }
+
+        .nav_links
+        {
+            position: absolute;
+
+            top: 0;
+            left: .75vw;
+            width: calc((180px - 1.5vw) / 2);
+            height: auto;
+        }
+
+            .nav_links div
+            {
+                width: 180px;
+                height: 32px;
+
+                padding-top: 6px;
+
+                font-family: $vt323;
+                font-size: 18px;
+
+                text-align: center;
+
+                cursor: pointer;
+            }
