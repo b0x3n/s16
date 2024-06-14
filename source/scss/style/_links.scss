@@ -9,7 +9,7 @@
         float: right;
     }
 
-        .link
+        .link, .links
         {
             position: relative;
             float: left;
@@ -28,4 +28,4 @@
         }
 
         .link:hover { color: $fg-hover; text-decoration: underline; }
-        .link:active { color: $fg-hover; }
+        .link:active { color: $fg-hover; text-decoration: underline; }
