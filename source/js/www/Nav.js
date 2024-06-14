@@ -54,9 +54,8 @@
 
         let     __setCurrentLink = () =>
         {
-            alert(`${_currentLink} (${localStorage.getItem('s16_current_page')})`);
             let _buildLink = localStorage.getItem('s16_current_page');
-            let _linkInitial = _buildLink.substr(0, 1);
+            let _linkInitial = _buildLink.substr(0, 1).toUpperCase();
 
             _currentLink = _linkInitial + _buildLink.substr(1);
 
