@@ -276,7 +276,7 @@
                 });
             } else {
                 $(`#nav_link_${_links[index].toLowerCase()}`).css({
-                    'background-color': '#000',
+                    'background-color': 'rgba(0, 0, 0, 0)',
                     'color': 'rgba(24, 220, 120, 1)',
                     'cursor': 'pointer'
                 });
