@@ -63,6 +63,8 @@
             left: .75vw;
             width: calc((180px - 1.5vw) / 2);
             height: auto;
+
+            background-color: none;
         }
 
             .nav_links div
@@ -76,6 +78,8 @@
                 font-size: 18px;
 
                 text-align: center;
+
+                background-color: none;
 
                 cursor: pointer;
             }
