@@ -27,5 +27,25 @@
             color: $fg-default;
         }
 
+
         .link:hover { color: $fg-hover; text-decoration: none; }
         .link:active { color: $fg-hover; text-decoration: none; }
+        
+        
+        .inline_link
+        {
+            position: relative;
+            float: left;
+
+            width: auto;
+            height: auto;
+
+            margin-left: 8px;
+            margin-right: 8px;
+
+            font-size: 22px;
+
+            text-decoration: none;
+
+            color: $fg-default;
+        }
