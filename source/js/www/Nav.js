@@ -97,20 +97,26 @@
         {        
             console.log(`Showing page ${pageName}`);
     
-            $(`#page_${_currentLink}`).css({
-                'opacity': '0.01',
-                'display': 'none'
-            });
+            $(`#page_${_currentLink}`).stop().animate({
+                'opacity': '0.01'
+            }, 100, "linear", function() {
     
+            $(this).css('display', 'none');
+
             _currentLink = pageName;
 
             if (typeof localStorage !== 'undefined')
                 localStorage.setItem('s16_current_page', pageName);
             
             $(`#page_${_currentLink}`).css({
-                'opacity': '0.99',
-                'display': 'block'
-            }); 
+                'display': 'block',
+                'opacity': '0.01'
+            });
+
+            $(`#page_${_currentLink}`).stop().animate({
+                'opacity': '0.99'
+            }, 100, "linear"); 
+            });
         };
 
 
