@@ -105,6 +105,26 @@
             $('#nav_links').html(__html);
 
             _nav_height = parseInt($('#nav_links').css('height').replace('px', ''));
+
+            _links.forEach(link => {
+                $(`#nav_link_${link.toLowerCase()}`).on('mouseover', () => {
+                    if (link.toLowerCase() === _currentLink)
+                        return;
+
+                    $(`#nav_link_${link.toLowerCase()}`).css({
+                        'color': '#FFF'
+                    });
+                });
+
+                $(`#nav_link_${link.toLowerCase()}`).on('mouseout', () => {
+                    if (link.toLowerCase() === _currentLink)
+                        return;
+
+                    $(`#nav_link_${link.toLowerCase()}`).css({
+                        'color': 'rgba(24, 220, 120, 1)'
+                    });
+                });
+            })
         };
 
 
