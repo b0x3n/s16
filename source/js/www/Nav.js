@@ -19,6 +19,13 @@
         ];
 
 
+        let     __titles = [
+            'Back to the Home page',
+            'The s16 Terminal application',
+            'View documentation'
+        ];
+
+
         let     _currentLink = _links[0];
         let     _currentState = NAV_STATE_HIDDEN;
 
@@ -38,10 +45,15 @@
                 'opacity': '0.01'
             });
 
-            __initDefaultNav();
-            __initMouseEvents();
             __loadPages();
 
+            console.log('Loaded pages');
+
+            //setTimeout(() => {
+            __initDefaultNav();
+            __initMouseEvents();
+            __initInlineLinks();
+    
             $(`#page_${_currentLink}`).css({
                 'display': 'block',
                 'opacity': '0.99'
@@ -49,6 +61,7 @@
 
             console.log('Nav module initialised');
             console.log(`Showing page ${_currentLink}`);
+            //}, 500);
         };
 
 
@@ -81,11 +94,23 @@
 
 
         let     __setCurrentPage = pageName =>
-        {
+        {        
+            console.log(`Showing page ${pageName}`);
+    
+            $(`#page_${_currentLink}`).css({
+                'opacity': '0.01',
+                'display': 'none'
+            });
+    
             _currentLink = pageName;
 
             if (typeof localStorage !== 'undefined')
                 localStorage.setItem('s16_current_page', pageName);
+            
+            $(`#page_${_currentLink}`).css({
+                'opacity': '0.99',
+                'display': 'block'
+            }); 
         };
 
 
@@ -93,8 +118,8 @@
         {
             let     __html = '';
 
-            _links.forEach(link => {
-                __html += `<div id="nav_link_${link.toLowerCase()}" class="link" style="margin: 0;">${link}</div>`;
+            _links.forEach((link, index) => {
+                __html += `<div id="nav_link_${link.toLowerCase()}" class="link" style="margin: 0;" title="${__titles[index]}">${link}</div>`;
             });
 
             $('#nav_links').css({
@@ -152,18 +177,8 @@
 
                 if (_page === _currentLink)
                     return;
-
-                $(`#page_${_currentLink}`).css({
-                    'opacity': '0.01',
-                    'display': 'none'
-                });
                 
                 __setCurrentPage(_page);
-
-                $(`#page_${_currentLink}`).css({
-                    'opacity': '0.99',
-                    'display': 'block'
-                });
 
                 $('#nav').trigger('mouseout');
             });
@@ -199,6 +214,19 @@
             _links.forEach(link => {
                 $(`#page_${link.toLowerCase()}`).load(`https://b0x3n.github.io/s16/public/pages/${link}.html`);
             });
+        };
+
+
+        let     __initInlineLinks = () =>
+        {
+            setTimeout(() => {
+                $('.inline_link').on("click", function() {
+                    let __id = $(this).attr('id').replace('inline_link_', '');
+                    let _page = __id;
+    
+                    __setCurrentPage(_page);                  
+                });
+            }, 500);
         };
 
 
