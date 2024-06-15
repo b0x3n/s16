@@ -16,10 +16,16 @@
     hljs.registerLanguage('javascript', javascript);
     hljs.registerLanguage('css', css);
 
+
+    import Err from         '../js/s16/Err';
+
+
     const   App = () =>
     {
 
         let     __nav;
+
+        let     __err;
 
 
         let     __init = () =>
@@ -28,6 +34,8 @@
               
             __nav = Nav();
 
+            __err = Err();
+
         };
 
 
@@ -35,7 +43,7 @@
 
 
         return {
-            //
+            isErr:          __err.getErr
         };
 
     };

@@ -13,7 +13,8 @@
     import App from './App';
 
     $(function() {
-
       let   _app = App();
 
+      if (_app.isErr(true))
+        return;
     });
