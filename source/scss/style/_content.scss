@@ -41,3 +41,17 @@
             {
                 padding: 8px;
             }
+
+            .page div p
+            {
+                display: inline-block;
+
+                margin: 0;
+                padding: 0;
+
+                width: auto;
+                height: auto;
+
+                color: $fg-default;
+            }
+            
