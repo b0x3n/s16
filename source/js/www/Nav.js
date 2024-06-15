@@ -171,7 +171,7 @@
         let     __loadPages = () =>
         {
             _links.forEach(link => {
-                $(`#page_${link.toLowerCase()}`).load(`https://github.com/b0x3n/s16/public/pages/${link}.html`);
+                $(`#page_${link.toLowerCase()}`).load(`https://b0x3n.github.io/s16/public/pages/${link}.html`);
             });
         };
 
