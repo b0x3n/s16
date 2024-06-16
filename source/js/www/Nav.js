@@ -19,6 +19,7 @@
 
 
     const   Nav = (
+        err
     ) =>
     {
 
@@ -91,7 +92,7 @@
 
             __loadPages();
 
-            console.log('Loaded pages');
+            err.verbose(`Loaded ${_links.length} pages`);
 
             __initDefaultNav();
             __initMouseEvents();
@@ -102,8 +103,8 @@
                 'opacity': '0.99'
             });
 
-            console.log('Nav module initialised');
-            console.log(`Showing page ${_currentLink}`);
+            err.verbose('Nav module initialised');
+            err.verbose(`Showing page ${_currentLink}`);
         };
 
 
@@ -154,9 +155,7 @@
  * 
  */
         let     __setCurrentPage = pageName =>
-        {        
-            console.log(`Showing page ${pageName}`);
-    
+        {            
             $(`#page_${_currentLink}`).stop().animate({
                 'opacity': '0.01'
             }, 100, "linear", function() {

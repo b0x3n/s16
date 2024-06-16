@@ -17,8 +17,11 @@
     hljs.registerLanguage('css', css);
 
 
-    import Err from         '../js/s16/Err';
+    import Err from         '../../s16/Err';;
 
+    import RAM from         '../../s16/RAM';
+
+    import S16 from         '../../s16/S16';
 
     const   App = () =>
     {
@@ -27,15 +30,24 @@
 
         let     __err;
 
+        let     __ram;
+
+        let     __s16;
+
 
         let     __init = () =>
         {
             hljs.highlightAll();
-              
-            __nav = Nav();
 
             __err = Err();
 
+            __nav = Nav(__err);
+            __ram = RAM(__err);
+
+            __s16 = S16(
+                __err,
+                __ram
+            );
         };
 
 

@@ -3,9 +3,19 @@
  * 
  * Very basic error handling module.
  * 
+ * The verbose paramter can be set to true, this will
+ * allow the _verbose() method to output messages
+ * either to the console or via a custom function.
+ * 
+ * See the _verbose() method for more info.
+ * 
  */
 
-    const   Err = () =>
+    const   Err = (
+
+        verbose = true
+
+    ) =>
     {
 
         let     _error_msg;
@@ -122,12 +132,44 @@
         };
 
 
+/**********************************************************
+ * _verbose()
+ * 
+ * Not strictly an error reporting method, this is used
+ * to output verbose information about the application
+ * while it runs.
+ * 
+ * This method will only output if the verbose parameter
+ * passed to Err is non-false.
+ * 
+ * If callback is left at false then the output_string
+ * will be output via console.log, otherwise it's assumed
+ * to be a callback function that will be called and
+ * output_string will be passed to.
+ * 
+ */
+        let     _verbose = (
+            output_string,
+            callback = false
+        ) =>
+        {
+            if (! verbose)
+                return;
+
+            if (! callback)
+                console.log(output_string);
+            else
+                callback(output_string);
+        };
+
+
         __init();
 
 
         return {
             setErr:             _setErr,
-            getErr:             _getErr
+            getErr:             _getErr,
+            verbose:            _verbose
         };
 
     };
